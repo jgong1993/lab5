@@ -10,8 +10,19 @@ $(document).ready(function() {
  */
 function initializePage() {
 	console.log("Javascript connected!");
+	$(".friends a").click(friendClick);
 }
 
+function friendClick(e){
+	e.preventDefault();
+
+	var currName = $(this).find("h3").text();
+	var aHeader = $(".friends h3");
+	var aName = anagrammedName(currName);
+	console.log("currname is:" + aName);
+	aHeader.text(aName);
+
+}
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
 	
